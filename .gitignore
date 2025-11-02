@@ -1,0 +1,16 @@
+# Node modules (very large folder)
+node_modules/
+
+# Environment files (contain sensitive data)
+.env
+
+# Logs (temporary debugging logs)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files (automatically created by Windows/macOS)
+.DS_Store
+
+# VS Code settings (personalized)
+.vscode/

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Chat</title>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #e4ecf8);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+      width: 90%;
+      max-width: 500px;
+      padding: 30px 40px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #2b3a67;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    p {
+      color: #555;
+      font-size: 15px;
+      margin: 10px 0 25px;
+    }
+
+    b {
+      color: #2b3a67;
+    }
+
+    textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      padding: 12px;
+      font-size: 15px;
+      outline: none;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+    }
+
+    textarea:focus {
+      border-color: #4c6ef5;
+    }
+
+    button {
+      background: #4c6ef5;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #3b5bdb;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Edit Chat</h2>
+    <p>
+      Chat ID: <b><%= chat._id %></b><br />
+      From <b><%= chat.from %></b> to <b><%= chat.to %></b>
+    </p>
+
+    <form action="/chats/<%= chat._id %>?_method=PUT" method="post">
+      <textarea name="newMsg" rows="6"><%= chat.msg %></textarea>
+      <br />
+      <button type="submit">Update Message</button>
+    </form>
+  </div>
+</body>
+</html>
